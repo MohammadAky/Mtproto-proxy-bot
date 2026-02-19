@@ -129,6 +129,7 @@ sudo ./installer.sh
 ```
 
 This script will automatically:
+
 - Install Python dependencies
 - Download and setup `mtg` proxy binary
 - Create a Python virtual environment
@@ -226,12 +227,14 @@ pm2 update                              # Update PM2
 ## 🛠 Troubleshooting
 
 ### **Bot won't start**
+
 ```bash
 pm2 logs mtproto-proxy-bot
 # Check for Python errors and .env configuration
 ```
 
 ### **Permission denied errors**
+
 ```bash
 # Run with proper permissions
 sudo pm2 start ecosystem.config.js
@@ -239,6 +242,7 @@ sudo pm2 save
 ```
 
 ### **Bot crashes on reboot**
+
 ```bash
 # Ensure startup script is configured
 sudo pm2 startup
@@ -248,12 +252,14 @@ sudo reboot
 ```
 
 ### **View error logs**
+
 ```bash
 tail -f logs/pm2-error.log
 tail -f logs/pm2-out.log
 ```
 
 ### **Restart all processes**
+
 ```bash
 pm2 kill
 pm2 start ecosystem.config.js
@@ -265,24 +271,28 @@ pm2 save
 ## 📊 Advanced PM2 Features
 
 ### **View CPU & Memory Usage**
+
 ```bash
 pm2 monit              # Interactive dashboard
 pm2 status             # Simple table view
 ```
 
 ### **Connect to PM2+ (Optional Cloud Monitoring)**
+
 ```bash
 pm2 link <secret> <public_key>
 # Visit https://app.pm2.io to monitor your bot remotely
 ```
 
 ### **Backup Process List**
+
 ```bash
 pm2 save
 # Your process list is saved in ~/.pm2/dump.pm2
 ```
 
 ### **Update Bot Code**
+
 ```bash
 cd /root/mtproto-proxy-bot
 git pull origin master
